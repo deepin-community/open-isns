@@ -1,0 +1,43 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+
+	@# Don't build with SLP support for now, openslp-dfsg is
+	@# orphaned (#565361), and will likely not be part of
+	@# Stretch (#795428).
+	dh_auto_configure -- --enable-shared --enable-static \
+		--with-security --without-slp --with-rundir=/run
+
+override_dh_auto_build:
+	dh_auto_build
+	dh_auto_build -- \
+                SOLIB=libisns.so.0 \
+                SOLIB_SONAME=libisns.so.0 \
+                LIB=libisns.a \
+                libisns.a libisns.so.0
+ 
+override_dh_auto_install:
+	@# We need to call make install install_hdrs install_lib,
+	@# so just add install_hdrs install_lib to the argument
+	@# list (install itself is handled by dh_auto_install)
+	dh_auto_install -- install_hdrs install_lib
+	@# Only install the libraries for the -nocrypto variant.
+	make -j1 DESTDIR=$$PWD/debian/tmp \
+                SOLIB=libisns.so.0 \
+                SOLIB_SONAME=libisns.so.0 \
+                LIB=libisns.a \
+                install_lib
+ 
+override_dh_installinit:
+	dh_installinit -popen-isns-server --name=isnsd
+	dh_installinit -popen-isns-discoveryd --name=isnsdd --no-start
+	dh_installinit --remaining-packages
+
+override_dh_makeshlibs:
+	dh_makeshlibs -plibisns0 --add-udeb="libisns-udeb"
+	dh_makeshlibs --remaining-packages

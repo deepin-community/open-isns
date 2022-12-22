@@ -1,0 +1,140 @@
+open-isns (0.101-0.2) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Debian iSCSI Maintainers <open-isns@packages.debian.org>  Wed, 22 Jun 2022 15:10:41 +0800
+
+open-isns (0.101-0.2) unstable; urgency=medium
+
+  [ Gianfranco Costamagna ]
+  * Non-maintainer upload
+
+  [ Lena Voytek ]
+  * d/open-isns-utils.install: Include isnssetup script in /usr/sbin along with
+    its man documentation (Closes: #1011448)
+
+  [ Camaleón ]
+  * Add Spanish translation of the debconf template (Closes: #987392)
+
+  [ Lev Lamberov ]
+  * Add Russian translation of the debconf template (Closes: #883337)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 23 May 2022 09:14:29 +0200
+
+open-isns (0.101-0.1) unstable; urgency=medium
+
+  * New upstream release
+    - Fix build with OpenSSL 3
+    - Fix use of deprecated functions (Closes: #994672)
+  * debian/patches: Remove patches integrated upstream
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 18 May 2022 00:25:21 +0200
+
+open-isns (0.100-3) unstable; urgency=medium
+
+  * Add patch from upstream to fix broken server auth initializaiton
+
+ -- Ritesh Raj Sarraf <rrs@debian.org>  Mon, 07 Dec 2020 14:03:56 +0530
+
+open-isns (0.100-2ubuntu1) hirsute; urgency=medium
+
+  * Build without -Werror to fix FTBFS.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 24 Nov 2020 10:40:31 +0000
+
+open-isns (0.100-2) unstable; urgency=medium
+
+  * Fix different signedness integer expression comparison
+
+ -- Ritesh Raj Sarraf <rrs@debian.org>  Mon, 23 Nov 2020 22:37:51 +0530
+
+open-isns (0.100-1) unstable; urgency=medium
+
+  * Drop build dependency on dh-systemd (Closes: #958592)
+  * New upstream version 0.100
+  * Add patch to fix build failure. Patch picked from upstream
+  * Overhaul the packaging with OpenSSL
+
+ -- Ritesh Raj Sarraf <rrs@debian.org>  Fri, 20 Nov 2020 20:00:00 +0530
+
+open-isns (0.97-3) unstable; urgency=medium
+
+  [ Ritesh Raj Sarraf ]
+  * Switch packaging to Salsa (Closes: #899769)
+
+ -- Ritesh Raj Sarraf <rrs@debian.org>  Sun, 07 Oct 2018 11:38:11 +0530
+
+open-isns (0.97-2) unstable; urgency=medium
+
+  [ Rui Branco ]
+  * Add Portuguese translations of debconf messages (Closes: #858746)
+
+ -- Christian Seiler <christian@iwakd.de>  Sun, 09 Apr 2017 12:58:39 +0200
+
+open-isns (0.97-1) unstable; urgency=medium
+
+  [ Christian Seiler ]
+  * New upstream version 0.97
+  * Drop debian/patches as all patches have been applied upstream.
+
+  [ Adriano Rafael Gomes ]
+  * Add Brazilian Portuguese translation of debconf messages
+    (Closes: #839272)
+
+  [ Chris Leick ]
+  * Add German translation of debconf messages
+    (Closes: #843765)
+
+ -- Christian Seiler <christian@iwakd.de>  Wed, 25 Jan 2017 10:37:36 +0100
+
+open-isns (0.96-5) unstable; urgency=medium
+
+  [ Christian Seiler ]
+  * debian/patches: replace patches with those accepted upstream
+  * debian/tests/auth: avoid race condition after isnsd restart
+  * debian/control: bump debhelper dependency now that version 10 is
+    released
+  * debian/control: use cgit instead of gitweb for Vcs-Browser
+
+  [ Debconf translations updates ]
+  * Dutch (Frans Spiesschaert). (Closes: #834627)
+  * French (Jean-Pierre Giraud). (Closes: #835097)
+
+ -- Christian Seiler <christian@iwakd.de>  Sun, 18 Sep 2016 14:11:11 +0200
+
+open-isns (0.96-4) unstable; urgency=medium
+
+  * debian/tests: refactor code, show isnsd status if auth test fails
+  * Rename libisns0-udeb to libisns-nocrypto0-udeb.
+    The udeb only contains the library required for future open-iscsi
+    versions (there is no need to run an iSNS server in a d-i
+    environment), which is the variant that's not linked against OpenSSL
+    to be compatible with the GPL. In contrast to libisns0, which
+    contains both versions of the library (including the OpenSSL-linked
+    libisns.so.0), the package name of the udeb should reflect the name
+    of the library included.
+
+ -- Christian Seiler <christian@iwakd.de>  Fri, 05 Aug 2016 19:46:56 +0200
+
+open-isns (0.96-3) unstable; urgency=medium
+
+  * Build a -nocrypto variant that doesn't link against OpenSSL.
+    (Required for GPL programs linking against libisns.)
+
+ -- Christian Seiler <christian@iwakd.de>  Tue, 26 Jul 2016 11:36:52 +0200
+
+open-isns (0.96-2) unstable; urgency=medium
+
+  * debian/*.postrm: ask user whether to delete auth_key etc. on purge
+    (Closes: #832344)
+  * debian/patches: fix FTBFS on kfreebsd-*
+  * debian/patches: fix FTBFS on hurd-i386
+  * debian/open-isns-server.postinst: prevent hang on sysvinit systems
+
+ -- Christian Seiler <christian@iwakd.de>  Sun, 24 Jul 2016 21:57:27 +0200
+
+open-isns (0.96-1) unstable; urgency=low
+
+  * Initial release. (Closes: #799061)
+
+ -- Christian Seiler <christian@iwakd.de>  Sun, 10 Jul 2016 09:46:56 +0200

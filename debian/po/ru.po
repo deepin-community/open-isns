@@ -1,0 +1,210 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: open-isns\n"
+"Report-Msgid-Bugs-To: open-isns@packages.debian.org\n"
+"POT-Creation-Date: 2016-07-24 17:33+0200\n"
+"PO-Revision-Date: 2017-12-02 20:21+0500\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"Last-Translator: Lev Lamberov <dogsleg@debian.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: ru\n"
+
+#. Type: string
+#. Description
+#: ../open-isns-discoveryd.templates:1001
+msgid "iSNS server name:"
+msgstr "Имя сервера iSNS:"
+
+#. Type: string
+#. Description
+#: ../open-isns-discoveryd.templates:1001
+msgid "The iSNS discovery daemon will connect to an iSNS server at startup."
+msgstr "Служба обнаружения iSNS при запуске соединится с сервером iSNS."
+
+#. Type: string
+#. Description
+#: ../open-isns-discoveryd.templates:1001
+msgid ""
+"If left blank, the discovery daemon will not be started after package "
+"installation, and you will have an opportunity to modify the configuration "
+"file, /etc/isns/isnsdd.conf."
+msgstr ""
+"Если это поле останется пустым, то служба обнаружения не будет запущена "
+"после установки пакета, а у вас будет возможность изменить файл настройки, /"
+"etc/isns/isnsdd.conf."
+
+#. Type: string
+#. Description
+#: ../open-isns-discoveryd.templates:2001
+msgid "iSNS server public key file:"
+msgstr "Файл открытого ключа сервера iSNS:"
+
+#. Type: string
+#. Description
+#: ../open-isns-discoveryd.templates:2001
+msgid ""
+"When authentication is enabled, the iSNS discovery daemon needs to know the "
+"public key of the iSNS server. Please provide a file name that contains the "
+"public key. It will then be copied to /etc/isns/server_key.pub."
+msgstr ""
+"При включении аутентификации служба обнаружения iSNS должна знать открытый "
+"ключ сервера iSNS. Укажите имя файла, содержащего открытый ключ. Ключ будет "
+"скопирован в файл /etc/isns/server_key.pub."
+
+#. Type: string
+#. Description
+#: ../open-isns-discoveryd.templates:2001
+msgid ""
+"Alternatively, you may copy the server's public key to that location "
+"yourself."
+msgstr ""
+"Либо же вы можете самостоятельно скопировать открытый ключ сервера в "
+"указанный файл."
+
+#. Type: string
+#. Description
+#: ../open-isns-discoveryd.templates:2001
+msgid ""
+"If left blank and /etc/isns/server_key.pub does not exist, authentication "
+"will remain disabled."
+msgstr ""
+"Если это поле останется пустым, а файл /etc/isns/server_key.pub не будет "
+"существовать, то аутентификация будет отключена."
+
+#. Type: string
+#. Description
+#: ../open-isns-discoveryd.templates:3001
+msgid "iSNS discovery daemon private key file:"
+msgstr "Файл закрытого ключа службы обнаружения iSNS:"
+
+#. Type: string
+#. Description
+#: ../open-isns-discoveryd.templates:3001
+msgid ""
+"When authentication is enabled, the iSNS discovery daemon needs to have a "
+"private key, where the corresponding public key is enrolled with the iSNS "
+"server. Please provide a file name that contains the private key. It will "
+"then be copied to /etc/isns/auth_key."
+msgstr ""
+"При включении аутентификации службе обнаружения iSNS требуется закрытый "
+"ключ, для которого соответствующий открытый ключ был бы зарегистрирован "
+"сервером iSNS. Укажите имя файла, содержащего закрытый ключ. Ключ будет "
+"скопирован в файл /etc/isns/auth_key."
+
+#. Type: string
+#. Description
+#: ../open-isns-discoveryd.templates:3001
+msgid ""
+"Alternatively, you may copy the discovery daemon's private key to that "
+"location yourself."
+msgstr ""
+"Либо же вы можете самостоятельно скопировать закрытый ключ службы "
+"обнаружения."
+
+#. Type: string
+#. Description
+#: ../open-isns-discoveryd.templates:3001
+msgid ""
+"If left blank and /etc/isns/auth_key does not exist, authentication will "
+"remain disabled."
+msgstr ""
+"Если это поле останется пустым, а файл /etc/isns/auth_key не будет "
+"существовать, то аутентификация будет отключена."
+
+#. Type: note
+#. Description
+#: ../open-isns-discoveryd.templates:4001
+msgid "iSNS discovery daemon will not be started at installation"
+msgstr "Служба обнаружения iSNS не будет запущена во время установки"
+
+#. Type: note
+#. Description
+#: ../open-isns-discoveryd.templates:4001
+msgid ""
+"You have not provided an iSNS server, and the configuration file /etc/isns/"
+"isnsdd.conf does not contain a setting either. The discovery daemon will "
+"therefore not be started at installation. Please configure the discovery "
+"daemon manually."
+msgstr ""
+"Вы не указали сервер iSNS, а файл настройки /etc/isns/isnsdd.conf не "
+"содержит этой информации. Таким образом, служба обнаружения не будет "
+"запущена во время установки. Настройте службу обнаружения вручную."
+
+#. Type: note
+#. Description
+#: ../open-isns-discoveryd.templates:4001
+msgid "It will nevertheless be configured to start at boot."
+msgstr "Служба будет настроена на запуск во время загрузки системы."
+
+#. Type: boolean
+#. Description
+#: ../open-isns-discoveryd.templates:5001 ../open-isns-server.templates:1001
+msgid "Remove /etc/isns/auth_key?"
+msgstr "Удалить файл /etc/isns/auth_key?"
+
+#. Type: boolean
+#. Description
+#: ../open-isns-discoveryd.templates:5001
+msgid ""
+"The private authentication key /etc/isns/auth_key was likely copied there "
+"during the installation of the open-isns-discoveryd package. If you are "
+"using other iSNS-related utilities (such as the iSNS server or isnsadm) that "
+"require this authentication key, you should not remove it."
+msgstr ""
+"Закрытый ключ аутентификации /etc/isns/auth_key скорее всего был скопирован "
+"во время установки пакета open-isns-discoveryd. Если вы используете другие "
+"связанные с iSNS утилиты (такие как сервер iSNS или isnsadm), которым "
+"требуется данный ключ аутентификации, то вам не следует его удалять."
+
+#. Type: boolean
+#. Description
+#. Type: boolean
+#. Description
+#: ../open-isns-discoveryd.templates:5001
+#: ../open-isns-discoveryd.templates:6001 ../open-isns-server.templates:1001
+msgid "Otherwise, it is safe to remove it."
+msgstr "В противном случае, вы можете его безопасно удалить."
+
+#. Type: boolean
+#. Description
+#: ../open-isns-discoveryd.templates:6001
+msgid "Remove /etc/isns/server_key.pub?"
+msgstr "Удалить /etc/isns/server_key.pub?"
+
+#. Type: boolean
+#. Description
+#: ../open-isns-discoveryd.templates:6001
+msgid ""
+"The iSNS server's public key /etc/isns/server_key.pub was likely copied "
+"there during the installation of the open-isns-discoveryd package. If you "
+"are using other iSNS-related utilities (such as isnsadm) that require this "
+"public key, you should not remove it."
+msgstr ""
+"Открытый ключ сервера iSNS /etc/isns/server_key.pub скорее всего был "
+"скопирован во время установки пакета open-isns-discoveryd. Если вы "
+"используете другие связанные с iSNS утилиты (такие как isnsadm), которым "
+"требуется данный открытый ключ, то вам не следует его удалять."
+
+#. Type: boolean
+#. Description
+#: ../open-isns-server.templates:1001
+msgid ""
+"The private authentication key /etc/isns/auth_key was likely generated "
+"during the  installation of the open-isns-server package. If you are using "
+"other iSNS-related utilities (such as the disocvery daemon or isnsadm) that "
+"require this authentication key, you should not remove it."
+msgstr ""
+"Закрытый ключ аутентификации /etc/isns/auth_key скорее всего был создан во "
+"время установки пакета open-isns-server. Если вы используете другие "
+"связанные с iSNS утилиты (такие как служба обнаружения или isnsadm), которым "
+"требуется данный ключ аутентификации, то вам не следует его удалять."
